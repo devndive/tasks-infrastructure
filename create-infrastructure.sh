@@ -44,12 +44,12 @@ az aks get-credentials \
 az acr build \
     --registry $ACR_NAME \
     --image $ACR_NAME.azurecr.io/frontend:v1 \
-    --file ./frontend/Dockerfile \
-    ./frontend
+    --file ./../tasks-frontend/Dockerfile \
+    ./../tasks-frontend
 
 # Build backendapi image and push it to the ACR
 az acr build \
     --registry $ACR_NAME \
     --image $ACR_NAME.azurecr.io/backend-api:v1 \
-    --file ./backend-api/Dockerfile \
-    ./backend-api
+    --file ./../tasks-backend-api/Dockerfile \
+    ./../tasks-backend-api
